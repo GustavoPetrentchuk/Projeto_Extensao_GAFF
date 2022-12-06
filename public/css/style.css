@@ -1,0 +1,76 @@
+:root {
+    --var-cor1: #F9E4D4;
+    --var-cor2: #D67D3E;
+    --var-cor3: #9C0F48;
+    --var-cor4: #470D21;
+}
+
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--var-cor4);
+}
+
+.login-box{
+    background-color: var(--var-cor1);
+    border-radius: 16px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+    height: 30%;
+    padding: 4px;
+    box-shadow: -8px 10px 3px var(--var-cor3);
+}
+
+.form-login {
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+form input[type=text],
+form input[type=password]{
+    width: 100%;
+    height: 16%;
+    padding: 5px;
+    margin: 4px 0 10px;
+}
+
+form input[type=submit]{  
+  width: 25%;
+  height: 13%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: var(--var-cor2);
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 8px 20px var(--var-cor4);
+}
+
+form input[type=submit]:active{
+    background-color: var(--var-cor3);
+    box-shadow: 0px 15px 20px var(--var-cor4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+form span{
+    font-weight: 500;
+}

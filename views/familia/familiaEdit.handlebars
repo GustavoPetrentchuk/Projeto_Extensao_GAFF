@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Editar Familia</h4>
+    </div>
+
+    <form action="/familiaEditarPost" method="POST">
+        <div class="card-body">
+            <input type="hidden" name="id" value={{familia.id}}>
+            <div class="row align-items-center g-3">
+                <div class="col-md-4 mb-3">
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="disabledTextInput" name="nome" class="form-control" value="{{familia.nome}}">
+                </div>
+
+                 <div class="col-md-4 mb-3">
+                    <label for="telefone">Telefone: </label>
+                    <input type="text" id="disabledTextInput"  name="telefone" class="form-control" value="{{familia.telefone}}">    
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="cidade:">cidade: </label>
+                    <input type="text" id="disabledTextInput" name="cidade" class="form-control" value="{{familia.cidade}}">
+                </div>
+            </div>
+                
+            <div class="row align-items-center g-3">
+                <div class="col-md-4 mb-3">
+                    <label for="bairro:">Bairro: </label>
+                    <input type="text" id="bairro" name="bairro" class="form-control" value="{{familia.bairro}}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="endereco:">Endereço: </label>
+                    <input type="text" id="endereco" name="endereco" class="form-control" value="{{familia.endereco}}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="numero:">Número: </label>
+                    <input type="text" id="disabledTextInput" name="numero" class="form-control" value="{{familia.numero}}">
+                </div>
+            </div>
+
+            <div class="row align-items-center g-3">
+                <div class="col-md-4 mb-3">
+                    <label for="cep:">CEP: </label>
+                    <input type="text" id="cep" class="form-control" name="cep" value="{{familia.cep}}">
+                </div>
+
+                <div class="col-md-5 mb-3">
+                    <label for="observacao">Observação: </label>
+                    <textarea class="form-control" aria-label="With textarea" name="observacao">{{familia.observacao}}</textarea>
+                </div>         
+            </div>        
+        </div>
+
+        <div class="card-footer">
+            <center>
+                <button type="submit" class="btn btn-outline-success">Salvar</button>
+                <a href="/familias" class="btn btn-outline-danger">Cancelar</a>
+            </center>
+        </div>
+    </form>
+</div>    

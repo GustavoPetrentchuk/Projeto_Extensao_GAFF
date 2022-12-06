@@ -1,0 +1,54 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Adicionar Pessoa</h4>
+            </div>
+            
+            <form action="/pessoaCriar" method="post">
+    
+                <div class="modal-body">
+
+                    <label for="nome" class="control-label col-md-1">Nome: </label>
+                    <input type="text" name="nome" id="nome" class="form-control" required>
+                    <label for="sobrenome" class="control-label">Sobrenome: </label>
+                    <input type="text" name="sobrenome" id="sobrenome" class="form-control" required>
+
+                    <label for="telefone" class="control-label col-md-1"> Telefone: </label>
+                    <div class="col-xs-2">
+                        <input type="text" name="telefone" id="telefone" class="form-control" required>
+                    </div>
+
+                    <label for="cpf" class="form-label">CPF: </label>  
+                    <input type="text" name="cpf" id="cpf" class="form-control" required>
+                    
+
+                    <label for="dataNascimento" class="form-label">Data de Nascimento: </label>
+                    <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" required>
+
+                    
+                    <label for="rendaMensal" class="form-label">Renda Mensal: </label>        
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">R$</span>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" aria-label="Quantia">
+                        </div>
+
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                  
+                </div>
+                <input type="hidden" name="id" value={{familia}}>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+  </div>
+</div>

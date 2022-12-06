@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Editar cadastro de usuario</h3>
+    </div>
+    <div class="card-body">
+        <form action="/editarPost" method="POST">
+            <input type="hidden" name="id" value={{usuario.id}}>
+            <div class="form-control">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" class="form-control" name="nome" id="nome" value="{{usuario.nome}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome: </label>
+                    <input type="text" class="form-control" name="sobrenome" value="{{usuario.sobrenome}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" name="email" value="{{usuario.email}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha: </label>
+                    <input type="password" class="form-control" name="senha" value="" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Permissão de Acesso: </label>
+                    <select name="bl_adm" class="form-select"  id="bl_adm">
+                        {{#if usuario.bl_adm}}
+                        <option value="{{usuario.bl_adm}}">Administrador</option>
+                        <option value="false">Usuário</option>
+                        {{else}}
+                        <option value="{{usuario.bl_adm}}">Usuário</option>
+                        <option value="true">Administrador</option>
+                        {{/if}}
+                    </select>
+                </div>
+                <center>
+                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-check-circle-fill"></i> Salvar</button>
+                    <a href="/cadastro" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
+                </center>
+            </div>
+        </form>
+    </div>
+</div>

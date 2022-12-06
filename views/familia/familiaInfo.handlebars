@@ -1,0 +1,95 @@
+<div class="card">
+    <div class="card-header">
+        <form action="">
+            <fieldset disabled>
+                <div class="row align-items-center g-3">
+                    <input type="hidden" name="id" value={{familia.id}}>
+                    <div class="col-md-4 mb-3">
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="disabledTextInput" class="form-control" value="{{familia.nome}}">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="telefone">Telefone: </label>
+                        <input type="text" id="disabledTextInput" class="form-control" value="{{familia.telefone}}">    
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="cidade:">cidade: </label>
+                        <input type="text" id="disabledTextInput" class="form-control" value="{{familia.cidade}}">
+                    </div>
+                </div>
+                
+                <div class="row align-items-center g-3">
+                    <div class="col-md-4 mb-3">
+                        <label for="bairro:">Bairro: </label>
+                        <input type="text" id="bairro" class="form-control" value="{{familia.bairro}}">
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label for="endereco:">Endereço: </label>
+                        <input type="text" id="endereco" class="form-control" value="{{familia.endereco}}">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="numero:">Número: </label>
+                        <input type="text" id="disabledTextInput" class="form-control" value="{{familia.numero}}">
+                    </div>
+
+                </div>
+
+                <div class="row align-items-center g-3">
+                    <div class="col-md-4 mb-3">
+                        <label for="cep:">CEP: </label>
+                        <input type="text" id="cep" class="form-control" value="{{familia.cep}}">
+                    </div>
+
+                    <div class="col-md-5 mb-3">
+                        <label for="observacao">Observação: </label>
+                        <textarea class="form-control" aria-label="With textarea">"{{familia.observacao}}"</textarea>
+                    </div>         
+                </div>
+            </fieldset>
+        </form>
+
+        <input type="hidden" name="id" value={{familia.id}}>
+        <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+            Adicionar Pessoa
+        </button>
+    </div>
+
+    <div class="card-body">
+       
+        <table class="table table-striped table-hover">
+            <tr class="table-primary">
+                <th class="table-light">Nome</th>
+                <th class="table-light">Sobrenome</th>
+                <th class="table-light">Telefone</th>
+                <th class="table-light">Data de Nascimento</th>
+                <th class="table-light">CPF</th>
+                <th class="table-light">Renda Mensal</th>
+                <th class="table-light"></th>
+            </tr>
+            {{#each resultado}}
+                <th class="table-light">{{this.nome}}</th>
+                <th class="table-light">{{this.Sobrenome}}</th>
+                <th class="table-light">{{this.telefone}}</th>
+                <th class="table-light">{{this.dataNascimento}}</th>
+                <th class="table-light">{{this.cpf}}</th>
+                <th class="table-light">{{this.rendaMensal}}</th>
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-target=".bd-example-modal-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                        </svg>
+                        Editar
+                </button>
+            {{/each}}
+        </table>
+    </div>
+
+</div>
+
+{{> pessoaCadastro familia = familia.id}}

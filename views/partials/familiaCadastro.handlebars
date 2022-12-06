@@ -1,0 +1,36 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Cadastrar Familia</h4>
+            </div>
+            
+            <form action="/familiasPost" method="post">
+                <div class="modal-body">
+                    <label for="nome" class="form-label">Nome: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome da familia" class="form-control" required>
+                    <label for="cidade" class="form-label">Cidade: </label>
+                    <input type="text" name="cidade" id="cidade" placeholder="Nome da cidade" class="form-control" required>
+                    <label for="bairro" class="form-label">Bairro: </label>
+                    <input type="text" name="bairro" id="bairro" placeholder="Nome do bairro" class="form-control" required>
+                    <label for="endereco" class="form-label">Endereço: </label>
+                    <input type="text" name="endereco" id="endereco" placeholder="Nome da rua" class="form-control" required>
+                    <label for="numero" class="form-label">Numero: </label>
+                    <input type="text" name="numero" id="numero" placeholder="Número da casa" class="form-control" required>
+                    <label for="cep" class="form-label">CEP: </label>
+                    <input type="text" name="cep" id="cep" placeholder="CEP" class="form-control" required>
+                    <label for="telefone" class="form-label">Telefone para contato: </label>
+                    <input type="tel" name="telefone" id="telefone" placeholder="(00) 0000-0000" class="form-control" required>
+                    <br>
+                    <label for="observacao" class="form-label">Observação: </label>
+                    <textarea class="form-control" name="observacao" id="observacao" aria-label="With textarea"></textarea>
+                </div>
+            
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+  </div>
+</div>
