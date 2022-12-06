@@ -47,7 +47,12 @@ module.exports = class PessoaController{
 
         Familia.findOne({where: {id : id}, raw: true})
         .then((familia) => {
-            res.render('familia/familiaInfo', {familia})
+            
+            Pessoa.findAll({where:{FamiliumId:id}, raw: true})
+            .then((pessoa) => {
+                console.log(pessoa)
+                res.render('familia/familiaInfo', {familia, pessoa})
+            })
         })
         .catch((err) => console.log(err))
         
@@ -76,6 +81,16 @@ module.exports = class PessoaController{
           .catch((err) => console.log(err)); 
     }
 
+    static pessoaDelete(req, res){
+        const idPost = req.body.id
+
+        Pessoa.destroy({where: {id:idPost}})
+        .then(res.redirect('/familias'))
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
     static pessoaCriar(req, res){
 
         const pessoa = {
@@ -95,12 +110,14 @@ module.exports = class PessoaController{
         });
     }
 
+
     static familiaEditar(req, res){
         const id = req.params.id;
 
         Familia.findOne({where:{ id:id}, raw: true})
         .then((familia) => {
-            res.render('familia/familiaEdit', { familia })
+
+            res.render('familia/familiaEdit', { familia})
         })
         .catch((err) => console.log(err))
     }
