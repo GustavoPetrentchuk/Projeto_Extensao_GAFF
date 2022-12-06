@@ -22,7 +22,7 @@ const Pessoa = database.define("Pessoa",{
         type: DataTypes.STRING
     },
     rendaMensal:{
-        type: DataTypes.BIGINT,
+        type: DataTypes.STRING,
     }
 });
 
