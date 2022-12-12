@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Editar Pessoa</h4>
+    </div>
+
+    <form action="/pessoaEditarPost" method="POST">
+        <div class="card-body">
+            <input type="hidden" name="id" value={{pessoa.id}}>
+            <div class="row align-items-center g-3">
+                <div class="col-md-4 mb-3">
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="disabledTextInput" name="nome" class="form-control" value="{{pessoa.nome}}">
+                </div>
+
+                 <div class="col-md-4 mb-3">
+                    <label for="sobrenome">Sobrenome: </label>
+                    <input type="text" id="sobrenome"  name="sobrenome" class="form-control" value="{{pessoa.sobrenome}}">    
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="telefone">Telefone: </label>
+                    <input type="text" id="telefone" name="telefone" class="form-control" value="{{pessoa.telefone}}">
+                </div>
+            </div>
+                
+            <div class="row align-items-center g-3">
+                <div class="col-md-4 mb-3">
+                    <label for="dataNascimento">Data de Nascimento </label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" class="form-control" value="{{pessoa.dataNascimento}}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="cpf">CPF: </label>
+                    <input type="text" id="cpf" name="cpf" class="form-control" value="{{pessoa.cpf}}">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="rendaMensal">Renda Mensal: </label>
+                    <input type="text" id="rendaMensal" name="rendaMensal" class="form-control" value="{{pessoa.rendaMensal}}">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+            <center>
+                <button type="submit" class="btn btn-outline-success">Salvar</button>
+                <a href="/familias" class="btn btn-outline-danger">Cancelar</a>
+            </center>
+        </div>
+    </form>
+</div>    

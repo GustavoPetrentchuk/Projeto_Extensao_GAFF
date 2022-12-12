@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const Familia = require('../models/familia');
 const Pessoa = require('../models/pessoa');
 
@@ -19,8 +20,9 @@ module.exports = class PessoaController{
     
             const resultado = data.map((result) => result.get({ plain: true }));
             //console.log(resultado);
+
             res.render('familia/familia', { resultado, qtd });
-          })
+        })
           .catch((err) => console.log(err)); 
     }
 
@@ -58,6 +60,51 @@ module.exports = class PessoaController{
         
     }
 
+
+    
+    
+    static familiaEditar(req, res){
+        const id = req.params.id;
+        
+        Familia.findOne({where:{ id:id}, raw: true})
+        .then((familia) => {
+            
+            res.render('familia/familiaEdit', { familia})
+        })
+        .catch((err) => console.log(err))
+    }
+
+    static async familiaEditarPost(req, res){
+        const idPost = req.body.id;
+
+        const familia = {
+            nome: req.body.nome,
+            endereco: req.body.endereco,
+            numero: req.body.numero,
+            bairro: req.body.bairro,
+            cep: req.body.cep,
+            cidade: req.body.cidade,
+            telefone: req.body.telefone,
+            observacao: req.body.observacao,
+        } 
+
+        await Familia.update(familia, {where: {id: idPost}})
+        .then(() => {
+            res.redirect('/familias')
+        })
+        .catch((err) => console.log(err));
+    }
+
+    static familiaExcluir(req, res){
+        const idPost = req.body.id;
+
+        Familia.destroy({where: {id:idPost}})
+        .then(() => {
+            res.redirect('/familias')
+        })
+        .catch((err) => console.log(err));
+
+    }
 
     static async pessoaBusca(req, res){
 
@@ -110,48 +157,30 @@ module.exports = class PessoaController{
         });
     }
 
-
-    static familiaEditar(req, res){
-        const id = req.params.id;
-
-        Familia.findOne({where:{ id:id}, raw: true})
-        .then((familia) => {
-
-            res.render('familia/familiaEdit', { familia})
-        })
-        .catch((err) => console.log(err))
+    static pessoaEdit(req, res){
+        const id = req.params.id
+        Pessoa.findOne({ where: { id: id }, raw: true })
+            .then((pessoa) => {
+                res.render('familia/pessoaEdit', { pessoa })
+            })
+            .catch((err) => console.log(err))
     }
 
-    static async familiaEditarPost(req, res){
+    static pessoaEditarPost(req, res) {
         const idPost = req.body.id;
 
-        const familia = {
+        const pessoa = {
             nome: req.body.nome,
-            endereco: req.body.endereco,
-            numero: req.body.numero,
-            bairro: req.body.bairro,
-            cep: req.body.cep,
-            cidade: req.body.cidade,
+            sobrenome: req.body.sobrenome,
             telefone: req.body.telefone,
-            observacao: req.body.observacao,
-        } 
-
-        await Familia.update(familia, {where: {id: idPost}})
-        .then(() => {
-            res.redirect('/familias')
-        })
-        .catch((err) => console.log(err));
+            dataNascimento: req.body.dataNascimento,
+            cpf: req.body.cpf,
+            rendaMensal: req.body.rendaMensal
+        }
+        Pessoa.update(pessoa, { where: { id: idPost }, raw: true })
+            .then(() => {
+                res.redirect('/familias')
+            })
+            .catch((err) => console.log(err));
     }
-
-    static familiaExcluir(req, res){
-        const idPost = req.body.id;
-
-        Familia.destroy({where: {id:idPost}})
-        .then(() => {
-            res.redirect('/familias')
-        })
-        .catch((err) => console.log(err));
-
-    }
-
 }

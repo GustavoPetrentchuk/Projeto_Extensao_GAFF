@@ -15,7 +15,7 @@ const Pessoa = database.define("Pessoa",{
         type: DataTypes.STRING,
     },
     dataNascimento:{
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     cpf:{

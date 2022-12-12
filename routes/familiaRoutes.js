@@ -12,5 +12,7 @@ router.post("/pessoaDelete", verificaSessao, familiaController.pessoaDelete);
 router.get('/familiaEditar/:id', verificaSessao, familiaController.familiaEditar);
 router.post('/familiaEditarPost', verificaSessao, familiaController.familiaEditarPost);
 router.post('/familiaExcluir', verificaSessao, familiaController.familiaExcluir);
+router.get('/pessoaEdit/:id', verificaSessao, familiaController.pessoaEdit);
+router.post('/pessoaEditarPost', verificaSessao, familiaController.pessoaEditarPost);
 
 module.exports = router;
