@@ -1,4 +1,5 @@
-//npm install express express-handlebars sequelize mysql2 express-session nodemon bcrypt body-parser bootstrap-icons
+/*npm install express express-handlebars sequelize mysql2 express-session nodemon bcrypt body-parser 
+bootstrap-icons session-file-store express-session express-flash cookie-session cookie-parser connect-flash*/
 //Imports dos pacotes
 const express =  require('express');
 const exphbs = require('express-handlebars');
