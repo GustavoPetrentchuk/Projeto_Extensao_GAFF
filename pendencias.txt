@@ -1,0 +1,7 @@
+FALTA DESENVOLVER
+    - Módulo de entrega de cestas basicas
+    - Módulo de recebimento de doações
+    - Nivel de acessos
+        Validar acesso de ADM ou Usuário
+    - Refatorar redirecionamento dos formulários
+    - Padronizar elementos do Front-End.
